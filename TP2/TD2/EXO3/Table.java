@@ -24,12 +24,25 @@ public class Table {
         throw new UnsupportedOperationException("Unimplemented method 'sontACote'");
     }
     public String lePlusJeune() {
-        int age = this.get(0).getAge();
+        int agePlusJeune = this.lesConvives.get(0).getAge();
+        String nomPlusJeune = this.lesConvives.get(0).getNom();
+        for(Personne convive : this.lesConvives){
+            if(convive.getAge() < agePlusJeune){
+                agePlusJeune = convive.getAge();
+                nomPlusJeune = convive.getNom();
+            }
+        }
+        return nomPlusJeune;
     }
 
     public int nombreDAdultes() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'nombreDAdultes'");
+        int nombreDAdultes = 0;
+        for(Personne convive : this.lesConvives){
+            if(convive.getAge() >= 18){
+                nombreDAdultes += 1;
+            }
+        }
+        return nombreDAdultes;
     }
     public void echange(String string, String string2) {
         // TODO Auto-generated method stub
