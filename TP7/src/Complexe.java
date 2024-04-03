@@ -16,6 +16,10 @@ public class Complexe {
         return this.imaginaire;
     }
 
+    public double getNorme() {
+        return this.getReel()*this.getReel() + this.getImaginaire()*this.getImaginaire();
+    }
+
     @Override
     public String toString() {
         return "" + this.reel + "," + this.imaginaire + "  ";

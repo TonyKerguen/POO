@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -25,10 +26,23 @@ public class Executable {
         
         List<Complexe> listeComplexes = Arrays.asList(new Complexe(2, 5), new Complexe(1, 6), new Complexe(3, 0));
     
+        ListeComplexes lc = new ListeComplexes(listeComplexes);
+
         Comparator<Complexe> comp = new ComparerComplexe();
+        Comparator<Complexe> compnorme = new ComparerNormeComplexe();
 
         System.out.println(listeComplexes);
-        Collections.sort(listeComplexes, comp);
-        System.out.println(listeComplexes);
+        // Collections.sort(listeComplexes, comp);
+        // System.out.println(listeComplexes);
+        // System.out.println(Collections.min(listeComplexes, new ComparerNormeComplexe()));
+
+
+        Complexe toutPetit = new Complexe(0, 0);
+        Complexe toutGrand = new Complexe(10, 10);
+
+        System.out.println(lc.estLePlusPetit(compnorme, toutPetit));    
+        
+        System.out.println(lc.estComprisEntre(compnorme, toutPetit, toutGrand));
+
     }
 }
