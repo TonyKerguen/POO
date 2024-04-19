@@ -48,11 +48,7 @@ public class Executable {
             anticonstitutionnellement = new LoginPasswd("anticonstitutionnellement", "bonjour");
             llp.addLoginPasswds(anticonstitutionnellement);
         } catch (TailleTropImportanteException e) {
-            System.out.println("la taille du mdp est trop grande");
+            System.out.println(new TailleTropImportanteException("la taille du mdp est trop grande"));
         }
-
-        
-        
-        
     }
 }

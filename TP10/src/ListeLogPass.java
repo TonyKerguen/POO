@@ -9,12 +9,20 @@ public class ListeLogPass {
         this.listLoginPasswds = new ArrayList<>();
     }
 
+    public ListeLogPass(List<LoginPasswd> lp){
+        this.listLoginPasswds = new ArrayList<>(lp);
+    }
+
     public List<LoginPasswd> getListLoginPasswds() {
-        return listLoginPasswds;
+        return this.listLoginPasswds;
     }
 
     public void addLoginPasswds(LoginPasswd lp) {
         this.listLoginPasswds.add(lp);
+    }
+
+    public void addLoginPasswds(String login, String password) throws TailleTropImportanteException {
+        this.listLoginPasswds.add(new LoginPasswd(login, password));
     }
     
 }

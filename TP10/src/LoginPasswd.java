@@ -26,5 +26,21 @@ public class LoginPasswd {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "login : "+this.getLogin()+", password : "+this.getPassword();
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if(o == null){return false;}
+        if(o ==this){return true;}
+        if(!(o instanceof LoginPasswd)) {
+            return false;
+        }
+        LoginPasswd lp = (LoginPasswd) o;
+        return this.getLogin().equals(lp.getLogin());
+    }
     
 }
